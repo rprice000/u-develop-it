@@ -31,6 +31,11 @@ app.use((req, res) => {
     res.status(404).end();
 });
 
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+    console.log(rows);
+})
+
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
